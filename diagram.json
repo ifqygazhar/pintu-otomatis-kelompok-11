@@ -1,0 +1,87 @@
+{
+  "version": 1,
+  "author": "Mohammad Iqbal Jaffar",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-breadboard-half",
+      "id": "bb1",
+      "top": -3,
+      "left": 137.2,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": -66.6,
+      "left": -163.8,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pir-motion-sensor",
+      "id": "pir1",
+      "top": -216.8,
+      "left": -36.18,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": -156.8,
+      "left": 226.4,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servo1",
+      "top": 180.4,
+      "left": 249.6,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -170.4,
+      "left": -199.8,
+      "attrs": { "volume": "0.1" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 102,
+      "left": 234.2,
+      "attrs": { "color": "white" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -82.45,
+      "left": 134.4,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    ["uno:5V", "bb1:bp.1", "red", ["v0"]],
+    ["uno:GND.2", "bb1:bn.1", "black", ["v0"]],
+    ["pir1:OUT", "uno:8", "gold", ["v0"]],
+    ["servo1:PWM", "uno:6", "gold", ["h0"]],
+    ["servo1:V+", "bb1:bp.4", "red", ["h0"]],
+    ["servo1:GND", "bb1:bn.4", "black", ["h0"]],
+    ["lcd1:VCC", "bb1:bp.3", "red", ["v220.9", "h-19.2", "v77.7"]],
+    ["lcd1:GND", "bb1:bn.3", "black", ["h-19.2", "v318.1"]],
+    ["lcd1:SDA", "uno:A4", "cyan", ["h0"]],
+    ["lcd1:SCL", "uno:A5", "violet", ["h0"]],
+    ["pir1:VCC", "bb1:bp.2", "red", ["h115.2", "v259.2", "h123.2"]],
+    ["pir1:GND", "bb1:bn.2", "black", ["v9.6", "h105.34", "v259.2", "h56"]],
+    ["bb1:bp.5", "bb1:bp.6", "red", ["v0"]],
+    ["bb1:bn.5", "bb1:bn.6", "black", ["v0"]],
+    ["bz1:1", "bb1:bn.7", "black", ["v307.2", "h440"]],
+    ["bb1:bn.8", "led1:C", "black", ["v0"]],
+    ["bz1:2", "uno:9", "red", ["v19.2", "h190.8"]],
+    ["r1:1", "uno:10", "red", ["h-144", "v19.2"]],
+    ["r1:2", "bb1:11b.j", "red", ["v172.8", "h75.6", "v57.6"]],
+    ["led1:A", "bb1:11b.i", "", ["$bb"]],
+    ["led1:C", "bb1:10b.i", "", ["$bb"]]
+  ],
+  "dependencies": {}
+}
